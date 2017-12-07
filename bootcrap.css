@@ -1,0 +1,170 @@
+:root {
+    --mWidth: 100;
+    --colsAmount: 12;
+    --size1: calc(var(--mWidth) * 1% / var(--colsAmount));
+    --size2: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 2));
+    --size3: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 3));
+    --size4: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 4));
+    --size5: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 5));
+    --size6: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 6));
+    --size7: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 7));
+    --size8: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 8));
+    --size9: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 9));
+    --size10: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 10));
+    --size11: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 11));
+    --size12: calc(var(--mWidth) * 1% / calc(var(--colsAmount) / 12));
+}
+
+.grid-container {
+    width: 100%;
+}
+
+.grid-container *{
+    box-sizing: border-box;
+}
+
+.row:before,
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    margin-top: 1px;
+    margin-bottom: 1px;
+
+}
+
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    width: var(--size1);
+    padding: var(--colsAmount) * 1px;
+    background-color: #FFDCDC;
+    text-align: center;
+}
+
+.col-1 {
+    width: var(--size1);
+    background-color: yellow;
+}
+
+.col-2 {
+    width: var(--size2);
+    background-color: green;
+
+}
+
+.col-3 {
+    width: var(--size3);
+    background-color: brown;
+
+}
+
+.col-4 {
+    width: var(--size4);
+    background-color: pink;
+
+}
+
+.col-5 {
+    width: var(--size5);
+    background-color: blue;
+
+}
+
+.col-6 {
+    width: var(--size6);
+    background-color: red;
+
+}
+
+.col-7 {
+    width: var(--size7);
+    background-color: purple;
+
+}
+
+.col-8 {
+    width: var(--size8);
+    background-color: magenta;
+}
+
+.col-9 {
+    width: var(--size9);
+    background-color: cyan;
+}
+
+.col-10 {
+    width: var(--size10);
+    background-color: salmon;
+}
+
+.col-11 {
+    width: var(--size11);
+    background-color: cornflowerblue;
+}
+
+.col-12 {
+    width: var(--size12);
+    background-color: gray;
+}
+
+[class*='os-'] {
+    /* Maybe need this later */
+}
+
+.os-1 { margin-left: var(--size1); }
+.os-2 { margin-left: var(--size2); }
+.os-3 { margin-left: var(--size3); }
+.os-4 { margin-left: var(--size4); }
+.os-5 { margin-left: var(--size5); }
+.os-6 { margin-left: var(--size6); }
+.os-7 { margin-left: var(--size7); }
+.os-8 { margin-left: var(--size8); }
+.os-9 { margin-left: var(--size9); }
+.os-10 { margin-left: var(--size10); }
+.os-11 { margin-left: var(--size11); }
+.os-12 { margin-left: var(--size12); }
+
+@media all and (max-width:800px) {
+    .col-1 { width: calc(var(--size1) * 2); }
+    .col-2 { width: calc(var(--size2) * 2); }
+    .col-3 { width: calc(var(--size3) * 2); }
+    .col-4 { width: calc(var(--size4) * 2); }
+    .col-5 { width: calc(var(--size5) * 2); }
+    .col-6 { width: calc(var(--size6) * 2); }
+    .col-7 { width: calc(var(--size7) * 2); }
+    .col-8 { width: calc(var(--size8) * 2); }
+    .col-9 { width: calc(var(--size9) * 2); }
+    .col-10 { width: calc(var(--size10) * 2); }
+    .col-11 { width: calc(var(--size11) * 2); }
+    .col-12 { width: calc(var(--size12) * 2); }
+
+    /*.row .col-2:last-of-type{ width: 100%; }*/
+
+    .row .col-5 ~ .col-1 { width: 100%; }
+
+    .os-1 { margin-left: calc(var(--size1) * 2); }
+    .os-2 { margin-left: calc(var(--size2) * 2); }
+    .os-3 { margin-left: calc(var(--size3) * 2); }
+    .os-4 { margin-left: calc(var(--size4) * 2); }
+    .os-5 { margin-left: calc(var(--size5) * 2); }
+    .os-6 { margin-left: calc(var(--size6) * 2); }
+    .os-7 { margin-left: calc(var(--size7) * 2); }
+    .os-8 { margin-left: calc(var(--size8) * 2); }
+    .os-9 { margin-left: calc(var(--size9) * 2); }
+    .os-10 { margin-left: calc(var(--size10) * 2); }
+    .os-11 { margin-left: calc(var(--size11) * 2); }
+    .os-12 { margin-left: calc(var(--size12) * 2); }
+
+}
+
+@media all and (max-width:650px) {
+    [class*='col-'] {
+        width: 100%;
+    }
+    .col-1 { width: 50%; }
+    [class*='os-'] {
+        margin-left: 50%;
+    }
+
+}
